@@ -28,12 +28,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
     NetworkHelper networkHelper = new NetworkHelper("http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=afcb27658f65af5d2be858c6f8f81d3f");
     var decodeData = await networkHelper.getData();
 
-    double temperature = decodeData['main']['temp'];
-    int condition = decodeData['weather'][0]['id'];
-    String cityName = decodeData['name'];
-
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return LocationScreen();
+      return LocationScreen(locationWeather: decodeData,);
     }));
   }
 
