@@ -51,7 +51,7 @@ class _CityScreenState extends State<CityScreen> {
                 onPressed: () {
                   Navigator.pop(
                     context,
-//                    cityName
+                    cityName
                   );
                 },
                 child: Text(
